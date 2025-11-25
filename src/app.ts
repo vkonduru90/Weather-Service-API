@@ -1,6 +1,8 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './docs/swagger';
 import { WeatherRouter } from './routes/weather.router';
 import { notFoundHandler } from './middleware/notFound';
 import { errorHandler } from './middleware/errorHandler';
@@ -12,6 +14,7 @@ export class App {
     this.app = express();
     this.initializeMiddlewares();
     this.initializeRoutes();
+    this.initializeSwagger();
     this.initializeErrorHandling();
   }
 
@@ -30,6 +33,10 @@ export class App {
     // Weather routes
     const weatherRouter = new WeatherRouter();
     this.app.use('/api/v1/weather', weatherRouter.router);
+  }
+  private initializeSwagger(): void {
+    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    console.log('Swagger docs available at: http://localhost:3000/api-docs');
   }
 
   private initializeErrorHandling(): void {

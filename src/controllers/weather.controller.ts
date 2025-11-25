@@ -3,6 +3,12 @@ import { WeatherService } from '../services/weather.service';
 import { Gridpoint12hForecastPeriod } from '../openapi/generated';
 import { todayForecastQuerySchema, TodayForecastQuery } from '../schemas/weather.schema';
 
+/**
+ * @swagger
+ * tags:
+ *   name: Weather
+ *   description: Endpoints for fetching weather forecasts
+ */
 export class WeatherController {
   weatherService: WeatherService;
 
