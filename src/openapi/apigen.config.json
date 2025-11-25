@@ -1,0 +1,8 @@
+{
+    "withInterfaces": false,
+    "withSeparateModelsAndApi": true,
+    "apiPackage": "apis",
+    "modelPackage": "models",
+    "useSingleRequestParameter": true,
+    "nullSafeAdditionalProps": true
+}
