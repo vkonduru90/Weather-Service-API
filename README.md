@@ -41,6 +41,11 @@ src/
 - Node.js >= 18
 - npm
 
+### Clone
+```bash
+git clone https://github.com/vkonduru90/Weather-Service-API.git
+```
+
 ### Installation
 
 ```bash
