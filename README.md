@@ -52,7 +52,7 @@ git clone https://github.com/vkonduru90/Weather-Service-API.git
 npm install
 ```
 
-### Generate API Client
+### Generate API Client (Optional)
 
 ```bash
 npm run generate:api
